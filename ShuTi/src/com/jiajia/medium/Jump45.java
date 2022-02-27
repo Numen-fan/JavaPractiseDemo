@@ -4,7 +4,7 @@ package com.jiajia.medium;
  * Created by Numen_fan on 2022/2/22
  * Desc:
  */
-public class Jump {
+public class Jump45 {
     public static void main(String[] args) {
         System.out.println(jump1(new int[] {2,3,1,1,4}));
     }
