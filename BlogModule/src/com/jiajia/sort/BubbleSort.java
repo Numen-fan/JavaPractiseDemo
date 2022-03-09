@@ -1,6 +1,6 @@
 package com.jiajia.sort;
 
-import com.jiajia.utils.ArrayUtils;
+import com.jiajia.kit.ArrayUtils;
 
 /**
  * https://www.jianshu.com/p/1458abf81adf

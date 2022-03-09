@@ -1,6 +1,7 @@
 package com.jiajia.sort;
 
-import com.jiajia.utils.ArrayUtils;
+import com.jiajia.kit.ArrayUtils;
+
 
 /**
  * Created by Numen_fan on 2022/2/19
@@ -15,6 +16,11 @@ public class CountSort {
         nums = sort2(nums);
 
         ArrayUtils.print(nums);
+
+       ArrayUtils.print(ArrayUtils.string2IntArray("[1,2,3]"));
+
+       ArrayUtils.print(ArrayUtils.string2IntArray2("[[1,2], [2,3]]"));
+
     }
 
     /**
