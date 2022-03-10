@@ -73,7 +73,7 @@ public class ArrayUtils {
 
         List<int[]> list = new ArrayList<>();
 
-        Matcher matcher = Pattern.compile("\\[\\S+]").matcher(tempStr);
+        Matcher matcher = Pattern.compile("\\[\\S+\\]").matcher(tempStr);
         while (matcher.find()) {
             list.add(string2IntArray(matcher.group()));
         }
