@@ -12,7 +12,7 @@ public class EraseOverlapIntervals435 {
     }
 
     /**
-     * 思想：
+     * 思想： 
      * 先对二维数组进行排序，按照start从小到大，
      * 如果start相同，再按照end从小到大排序。
      * 从前往后取区间，记录当前不重叠的end，
