@@ -1,11 +1,8 @@
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import org.junit.Test;
-import org.omg.CORBA.StringHolder;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class Demo2 {
     public static void main(String[] args) {
@@ -55,7 +52,6 @@ public class Demo2 {
         System.out.println(s2.intern() == s1);
     }
 
-    @Test
     public void testJSONObject() {
 
         Object obj1 = JSON.parse("");
