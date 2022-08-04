@@ -13,6 +13,11 @@ public class Solution20220728 {
         Solution20220728 solution20220728 = new Solution20220728();
 
         solution20220728.arrayRankTransform(new int[]{37,12,28,9,100,56,80,5,12});
+
+        String str = "\r\n\r\n\r\nghdfgk\r\n\r\n\r\nfsdkfh\r\n\r\n\r\nsjgkf\r\n\r\n\r\n";
+
+        System.out.println(str.contains("\r\n"));
+
     }
 
 
