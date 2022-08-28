@@ -68,12 +68,15 @@ public class ArrayUtils {
             return new int[][]{};
         }
 
-        String tempStr = str.trim();
-        tempStr = tempStr.substring(1, tempStr.length() - 1); // 不包括length - 1位置字符
-
         List<int[]> list = new ArrayList<>();
 
-        Matcher matcher = Pattern.compile("\\[\\S+\\]").matcher(tempStr);
+        String tempStr = str.trim();
+        tempStr = tempStr.substring(1, tempStr.length() - 1); // 不包括length - 1位置字符 => [1,2],[2,3],[3,4]
+
+        String reg = "\\[[0-9]+,[0-9]+\\]";
+
+        Matcher matcher = Pattern.compile(reg).matcher(tempStr);
+
         while (matcher.find()) {
             list.add(string2IntArray(matcher.group()));
         }
