@@ -3,7 +3,10 @@ package com.jiajia.test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Demo1 {
+public class Demo1  {
+
+    private  port1 po1;
+    private  port2 po2;
 
     public static void main(String[] args) {
 
@@ -20,7 +23,7 @@ public class Demo1 {
 
         Thread.setDefaultUncaughtExceptionHandler(new CrashHandler());
 
-        System.out.println(1 / 0);
+//        System.out.println(1 / 0);
 
         int aa = new CrashHandler().a;
 
@@ -47,7 +50,18 @@ public class Demo1 {
                 break;
         }
 
+        Demo1 demo1 = new Demo1();
+        demo1.print();
 
+    }
+
+    public void print() {
+        Point point = new Point();
+        po1 = point;
+        po2 = point;
+
+        po1.print();
+        po2.print();
 
     }
 
@@ -69,4 +83,24 @@ public class Demo1 {
         }
     }
 
+}
+
+class Point implements port1, port2 {
+
+    @Override
+    public void print() {
+        System.out.println("print");
+    }
+}
+
+interface port1 {
+    default void print() {
+        System.out.println("print1");
+    }
+}
+
+interface port2 {
+    default void print() {
+        System.out.println("print2");
+    }
 }
