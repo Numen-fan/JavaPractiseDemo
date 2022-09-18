@@ -73,7 +73,7 @@ public class ArrayUtils {
         String tempStr = str.trim();
         tempStr = tempStr.substring(1, tempStr.length() - 1); // 不包括length - 1位置字符 => [1,2],[2,3],[3,4]
 
-        String reg = "\\[[0-9]+,[0-9]+\\]";
+        String reg = "\\[[0-9]+[,]*[0-9]*\\]";
 
         Matcher matcher = Pattern.compile(reg).matcher(tempStr);
 
