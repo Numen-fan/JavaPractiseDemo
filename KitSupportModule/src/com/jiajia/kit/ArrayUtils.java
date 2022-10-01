@@ -73,12 +73,13 @@ public class ArrayUtils {
         String tempStr = str.trim();
         tempStr = tempStr.substring(1, tempStr.length() - 1); // 不包括length - 1位置字符 => [1,2],[2,3],[3,4]
 
-        String reg = "\\[[0-9]+[,]*[0-9]*\\]";
+        String[] arr = tempStr.split("],");
 
-        Matcher matcher = Pattern.compile(reg).matcher(tempStr);
-
-        while (matcher.find()) {
-            list.add(string2IntArray(matcher.group()));
+        for (String s : arr) {
+            if (!s.endsWith("]")) {
+                s += "]";
+            }
+            list.add(string2IntArray(s));
         }
 
         return list.toArray(new int[][]{});
