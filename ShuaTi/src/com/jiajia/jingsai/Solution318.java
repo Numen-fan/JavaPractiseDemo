@@ -17,7 +17,6 @@ public class Solution318 {
 
         System.out.println(totalCost(ArrayUtils.string2IntArray("[17,12,10,2,7,2,11,20,8]"), 3, 4));
 
-        "str".replaceAll()
     }
 
     /**
