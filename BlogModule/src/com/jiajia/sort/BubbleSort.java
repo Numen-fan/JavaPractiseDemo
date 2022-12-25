@@ -7,10 +7,34 @@ import com.jiajia.kit.ArrayUtils;
  */
 public class BubbleSort {
 
+    private static final ThreadLocal<Integer> mThreadLocal = new ThreadLocal<>();
+
     public static void main(String[] args) {
         int[] arr = {2,5,1,3,8,5,7,4,3};
         bubbleSort(arr);
         ArrayUtils.print(arr);
+
+        mThreadLocal.set(1);
+
+        System.out.println(mThreadLocal.get());
+
+        new Thread("Thread#1") {
+            @Override
+            public void run() {
+                super.run();
+                mThreadLocal.set(2);
+                System.out.println(mThreadLocal.get());
+            }
+        }.start();
+
+        new Thread("Thread#2") {
+            @Override
+            public void run() {
+                super.run();
+                System.out.println(mThreadLocal.get() == null ? "null" : mThreadLocal.get());
+            }
+        }.start();
+
     }
 
     /**
