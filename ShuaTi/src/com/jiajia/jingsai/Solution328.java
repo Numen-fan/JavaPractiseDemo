@@ -10,7 +10,7 @@ public class Solution328 {
     public static void main(String[] args) {
 
         Solution328 s = new Solution328();
-        System.out.println(s.countGood(ArrayUtils.string2IntArray("[3,1,4,3,2,2,4]"), 2));
+        System.out.println(s.countGood(ArrayUtils.string2IntArray("[2,3,1,3,2,3,3,3,1,1,3,2,2,2]"), 18));
 
     }
 
@@ -75,34 +75,69 @@ public class Solution328 {
      */
     public long countGood(int[] nums, int k) {
         long ans = 0;
-        for (int i = 0; i < nums.length - 1; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
-                // 检查i-j之间是否满足需求
-                // 如果i-j的长度不能配对k个组，那么也不需要进行计算了，做剪枝
-                int len = j - i + 1;
-                if (calSum(len) < k) {
+        Map<Integer, Integer> map;
+        // 需要由k反推所需要的最小长度，并根据此长度初始化map，后面滑动处理这个map即可
+        int l = calMinLen(k);
+        map = initMap(nums, 0, l); // map初始化
+        int end = l;
+        if (getMapPairCnt(map) >= k) {
+            ans += nums.length - end;
+        }
+        // 遍历子数组的起点和重点
+        for (int i = 0; i < nums.length - l; i++) { // 注意这里 - l
+            if (i > 0) {
+                // 需要将前一个元素从map中移除
+                int cnt = map.get(nums[i - 1]);
+                map.put(nums[i - 1], cnt - 1);
+
+                if (end >= nums.length -1) {
+                    if (getMapPairCnt(map) >= k) {
+                        ans += 1;
+                    }
                     continue;
                 }
-                if (calPair(nums, i , j) >= k) {
-                    // 当前满足, 那么j之后的所有元素都满足
-                    ans += nums.length - j;
-                    break; // 不再进行后面的计算了
+            }
+
+            end++;
+            while (end < nums.length) {
+                // 需要往map里面新增
+                int cnt = map.getOrDefault(nums[end], 0);
+                map.put(nums[end], ++cnt);
+                if (getMapPairCnt(map) >= k) {
+                    ans += nums.length - end;
+                    break;
                 }
+                end++;
             }
         }
 
         return ans;
     }
 
-    private int calPair(int[] nums, int start, int end) {
-        int ans = 0;
+    /**
+     * 将start和end之间的数映射到map中
+     * @param nums
+     * @param start
+     * @param end
+     * @return
+     */
+    private Map<Integer, Integer> initMap(int[] nums, int start, int end) {
         HashMap<Integer, Integer> map = new HashMap<>();
         while (start <= end) {
             int cnt = map.getOrDefault(nums[start], 0);
             map.put(nums[start], ++cnt);
             start++;
         }
+        return map;
+    }
 
+    /**
+     * 计算当前map中的配对数量
+     * @param map
+     * @return
+     */
+    private int getMapPairCnt(Map<Integer, Integer> map) {
+        int ans = 0;
         // map中key是元素，value是出现的次数
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             int cnt = entry.getValue();
@@ -112,7 +147,6 @@ public class Solution328 {
             // 出现了cnt次key，那么可以配对多少C cnt / 2，配对是(cnt- 1)！
             ans += calSum(cnt - 1);
         }
-
         return ans;
     }
 
@@ -123,6 +157,15 @@ public class Solution328 {
             t--;
         }
         return ans;
+    }
+
+    private int calMinLen(int k) {
+        int len = 0;
+        do {
+            len++;
+            k -= len;
+        } while (k > 0);
+        return k < 0 ? len - 1 : len;
     }
 
 }
