@@ -1,16 +1,14 @@
-package com.jiajia.jingsai;
-
-import java.util.List;
+package com.jiajia.common;
 
 /**
  * Created by Numen_fan on 2022/2/20
  * Desc: 链表节点定义
  */
 public class ListNode {
-    int val;
-    ListNode next;
+    public int val;
+    public ListNode next;
     ListNode() {}
-    ListNode(int val) { this.val = val; }
+    public ListNode(int val) { this.val = val; }
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 
     public static ListNode buildList(int[] arr) {
@@ -33,4 +31,15 @@ public class ListNode {
         return head;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("[").append(val);
+        ListNode node = this.next;
+        while (node != null) {
+            sb.append(',').append(node.val);
+            node = node.next;
+        }
+        sb.append("]");
+        return sb.toString();
+    }
 }

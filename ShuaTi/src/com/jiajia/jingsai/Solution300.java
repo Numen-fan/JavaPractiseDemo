@@ -1,5 +1,7 @@
 package com.jiajia.jingsai;
 
+import com.jiajia.common.ListNode;
+
 import java.util.*;
 
 /**

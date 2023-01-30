@@ -1,5 +1,7 @@
 package com.jiajia.jingsai;
 
+import com.jiajia.common.ListNode;
+
 /**
  * Created by Numen_fan on 2022/2/20
  * Desc:
