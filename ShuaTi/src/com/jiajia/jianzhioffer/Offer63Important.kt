@@ -3,7 +3,7 @@ package com.jiajia.jianzhioffer
 /**
  * 剑指 Offer 63. 股票的最大利润
  */
-class Offer63 {
+class Offer63Important {
     fun maxProfit(prices: IntArray): Int {
         if (prices.isEmpty()) {
             return 0
