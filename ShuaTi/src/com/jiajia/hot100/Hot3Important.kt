@@ -1,11 +1,14 @@
 package com.jiajia.hot100
 
-class Hot3 {
+/**
+ * 3. 无重复字符的最长子串
+ */
+class Hot3Important {
 
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            val h = Hot3()
+            val h = Hot3Important()
             println(h.lengthOfLongestSubstring("bbbbb"))
         }
     }

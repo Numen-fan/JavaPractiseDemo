@@ -1,5 +1,9 @@
 package com.jiajia.hot100
 
+/**
+ * 31. 下一个排列
+ * https://leetcode.cn/problems/next-permutation/
+ */
 class Hot31 {
 
     companion object {

@@ -3,6 +3,9 @@ package com.jiajia.hot100
 import com.jiajia.common.ListNode
 import java.util.PriorityQueue
 
+/**
+ * 23. 合并K个排序链表
+ */
 class Hot23 {
 
     fun mergeKLists(lists: Array<ListNode?>): ListNode? {

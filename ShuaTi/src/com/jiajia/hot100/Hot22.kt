@@ -4,6 +4,9 @@ import java.lang.StringBuilder
 import java.util.*
 import kotlin.collections.ArrayList
 
+/**
+ * 22. 括号生成
+ */
 class Hot22 {
 
     companion object {

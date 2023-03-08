@@ -6,9 +6,10 @@ package com.jiajia.common;
  */
 public class ListNode {
     public int val;
-    public ListNode next = null;
+    public ListNode next = null; // right节点
+    public ListNode head = null; // left节点
     public ListNode random = null;
-    ListNode() {}
+    public ListNode() {}
     public ListNode(int val) { this.val = val; }
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 
