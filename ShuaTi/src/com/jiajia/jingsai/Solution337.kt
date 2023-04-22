@@ -1,5 +1,6 @@
 package com.jiajia.jingsai
 
+import java.util.Collections
 import kotlin.test.assertNotSame
 import kotlin.test.currentStackTrace
 
@@ -11,6 +12,7 @@ class Solution337 {
             val s = Solution337()
             println(s.beautifulSubsets(intArrayOf(2,4,6), 2))
             println(s.findSmallestInteger(intArrayOf(3,0,3,2,4,2,1,1,0,4), 5))
+            val list = ArrayList<Int>()
         }
     }
 
@@ -35,6 +37,7 @@ class Solution337 {
         if (grid[0][0] != 0) {
             return false
         }
+        Math.abs(1)
         return checkCurPosition(grid, 0, 0)
     }
 
