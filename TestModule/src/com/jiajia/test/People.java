@@ -5,6 +5,8 @@ import java.util.List;
 
 public class People {
     private String name;
+
+    public static int a = 10;
     private int age;
     private final List<String> favorite = new ArrayList<>();
 
@@ -16,6 +18,10 @@ public class People {
 //
 //    }
 
+    {
+        System.out.println("我是构造函数前");
+    }
+
     public People(String name, int age) {
         this.name = name;
         this.age = age;
@@ -23,6 +29,12 @@ public class People {
         favorite.add("English");
         favorite.add("math");
         favorite.add("chinese");
+
+        System.out.println("我是构造函数");
+    }
+
+    {
+        System.out.println("我是构造函数后");
     }
 
 

@@ -11,8 +11,10 @@ public class Demo1  {
     public static void main(String[] args) {
 
         List<People> list1 = new ArrayList<>();
-        list1.add(new People("11", 1));
-        list1.add(new People("22", 22));
+//        list1.add(new People("11", 1));
+//        list1.add(new People("22", 22));
+
+
 
         System.out.println(Demo1.class.getSimpleName());
 

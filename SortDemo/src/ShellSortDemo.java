@@ -3,8 +3,11 @@ import java.util.Arrays;
 public class ShellSortDemo {
 
     public static void main(String[] args) {
-        int[] arr = {3,-1, 3, 45, 98, 0, 2, 1, 34, 56, 0, -2, -89,2};
+        int[] arr = {15,37,1,2,3,7,10,11,12,13,39,42,67,20,57,65,38,36,4};
         System.out.println(Arrays.toString(shellSort(arr)));
+
+//        int[] packageArr = {};
+//        System.out.println(packageArr.length);
     }
 
     /**
